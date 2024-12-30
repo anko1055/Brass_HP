@@ -1,35 +1,34 @@
 :root {
   --text-color: #000000;
   --background-color: #fff;
- }
+}
  
- /* ダークモード用のスタイル */
- @media (prefers-color-scheme: dark) {
+/* ダークモード用のスタイル */
+@media (prefers-color-scheme: dark) {
   :root {
-   --text-color: #fff;
-   --background-color: #000000;
+    --text-color: #fff;
+    --background-color: #000000;
   }
- }
+}
  
- /* スタイルの適用 */
- 
-
-
+/* スタイルの適用 */
 body {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   min-height: 100vh; 
   text-align: center;
   font-family: 'UD デジタル 教科書体 N-B', serif;
   color: var(--text-color);
   background-color: var(--background-color);
 }
+
 .content {
   flex: 1;
   padding-bottom: 150px; 
 }
+
 .title {
   display: flex;
   justify-content: center;
@@ -38,36 +37,29 @@ body {
   width: 100%;
   font-family: 'UD デジタル 教科書体 N-B', serif;
   font-size: 2rem; 
-
   color: var(--text-color);
   background-color: var(--background-color);
-
 }
 
-.menu-btn,.menu-icon,.menu{
-  display:none;
+.menu-btn, .menu-icon, .menu {
+  display: none;
 }
 
-
-.main{
-  margin-top:100px;
+.main {
+  margin-top: 100px;
 }
 
 /* Navbar & Navmenu color */
-  
-
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-
 .sidebar {
   width: 200px; 
   height: 100vh; 
-  margin-top:100px;
+  margin-top: 100px;
   position: fixed; /* 固定位置 */
   left: 0;
   color: var(--text-color);
@@ -85,7 +77,7 @@ body {
 }
 
 .sidebar ul li a {
-  text-decoration:none;
+  text-decoration: none;
   color: var(--text-color);
   padding: 10px; /* パディング */
   display: block; /* ブロック要素にする */
@@ -99,13 +91,13 @@ body {
 
 .content {
   margin-left: 220px; 
-  margin-top:100px
+  margin-top: 100px;
 }
 
-
-.concertPhoto{
-  margin:0;
+.concertPhoto {
+  margin: 0;
 }
+
 .fancyContainer {
   display: flex;
   justify-content: center;
@@ -214,7 +206,6 @@ body {
   width: 0;
 }
 
-
 /*sns card*/
 .sns_card {
   width: 100vw;
@@ -225,13 +216,13 @@ body {
   justify-content: center;
   padding: 0;
   gap: 20px;
-  position:relative;
-  bottom:0;
-  left:0;
-  z-index:10;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
 }
 
-/* for all social containers*/
+/* for all social containers */
 .socialContainer {
   width: 40px;
   height: 50px;
@@ -244,18 +235,19 @@ body {
   border-radius: 15px 0 15px 0px;
 }
 
-/* instagram*/
+/* instagram */
 .containerOne:hover {
   background-color: #d62976;
   transition-duration: 1.2s;
 }
-/* twitter*/
+
+/* twitter */
 .containerTwo:hover {
   background-color: #00acee;
   transition-duration: 1.2s;
 }
 
-/* Whatsapp*/
+/* Whatsapp */
 .containerFour:hover {
   background-color: #f90101;
   transition-duration: 1.2s;
@@ -278,8 +270,6 @@ body {
   animation: slide-in-top 1.2s both;
 }
 
-
-
 .container {
   width: 80%;
   max-width: 800px;
@@ -295,6 +285,7 @@ body {
   align-items: flex-start; /* 上揃え */
   margin-bottom: 20px; /* 各イベントの間隔 */
 }
+
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -307,10 +298,11 @@ h1 {
   border-radius: 8px;
 }
 
-.event_description{
-  text-align:left;
-  margin-left:20px;
+.event_description {
+  text-align: left;
+  margin-left: 20px;
 }
+
 h2 {
   margin: 20px 0 10px;
   font-size: 1.8em;
@@ -334,16 +326,16 @@ footer {
   bottom: 0;
   width: 100%;
 }
-.schedule_card{
 
+.schedule_card {
   width: 100%;
-  max-width: 450px; /* Ensures card doesn't exceed a certain width */
+  max-width: 450px; 
   height: 150px;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
   box-shadow: 0px 0px 10px -6px #6f6f6f;
-  margin: 40px auto; /* Center align */
+  margin: 40px auto; 
 }
 
 .schedule_card img {
@@ -351,67 +343,66 @@ footer {
   height: auto;
   display: block;
 }
+
 .schedule_title {
-font-size: 20px;
-text-align:left;
-position: relative;
-top: -20px;
+  font-size: 20px;
+  text-align: left;
+  position: relative;
+  top: -20px;
 }
 
 .schedule_content {
-position: absolute;
-left: 0;
-bottom: 0;
-width: 100%;
-padding: 20px 20px; 
-background-color: var(--background-color);
-border-top-left-radius: 30px; 
-transform: translateY(75px);
-
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 20px; 
+  background-color: var(--background-color);
+  border-top-left-radius: 30px; 
+  transform: translateY(75px);
 }
-
 
 .schedule_content::before {
-  opacity:1;
-content: '';
-position: absolute;
-width: 110px;
-height: 110px;
-border-radius: 30px;
-background-color: transparent;
-box-shadow: 60px 60px var(--background-color);
-top: -72%;
-right: -10%;
+  opacity: 1;
+  content: '';
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 30px;
+  background-color: transparent;
+  box-shadow: 60px 60px var(--background-color);
+  top: -72%;
+  right: -10%;
 }
 
-
 .schedule_description {
-opacity: 0;
-transition: opacity .5s;
-position: relative;
-font-size: 12px;
-line-height: 1.2;
-text-align:center;
+  opacity: 0;
+  transition: opacity .5s;
+  position: relative;
+  font-size: 12px;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .schedule_description p {
-padding: 0;
-position: absolute;
-top: 10px;
-left: 0;
-font-size: 10px;
-transform: translateY(-40%);
+  padding: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 10px;
+  transform: translateY(-40%);
 }
-
 
 .schedule_card:hover .schedule_content {
   transform: translateY(0);
   opacity: 1;
 }
+
 .schedule_card:hover .schedule_description {
   display: block;
   opacity: 1;
 }
+
 /* チェックボックスを非表示にする */
 #scheduleCheck {
   display: none;
@@ -432,7 +423,7 @@ label[for="scheduleCheck"] {
 /* チェックされた時だけ transform & opacity を変更 */
 #scheduleCheck:checked ~ .schedule_card .schedule_content {
   transform: translateY(0);
-
+  opacity: 1;
 }
 
 /*link*/
@@ -448,175 +439,174 @@ label[for="scheduleCheck"] {
   width: 50%; 
   box-sizing: border-box; 
   padding: 5px; 
-  color:var(--text-color);
+  color: var(--text-color);
 }
 
-.link_color{
-  color:var(--text-color);
+.link_color {
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 768px) {
   /* Nav items */
-.menu {
-  display:block !important;
-  list-style: none;
-  position: absolute;
-  width: 100%;
-  height: auto;
-  top: 0;
-  margin-top: 52px;
-  padding: 0 0 10px 0;
-  clear: both;
-  background: var(--text-color);
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  transform: scale(1, 0);
-  transform-origin: top;
-}
+  .menu {
+    display: block !important;
+    list-style: none;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    margin-top: 52px;
+    padding: 0 0 10px 0;
+    clear: both;
+    background: var(--text-color);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+    transform: scale(1, 0);
+    transform-origin: top;
+  }
 
-/* Hamburger menu button */
-.menu-btn:checked ~ .menu {
-  transform: scale(1, 1);
-  transform-origin: top;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+  /* Hamburger menu button */
+  .menu-btn:checked ~ .menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-/* Hamburger menbu text */
-.menu a {
-  text-decoration: none;
-  font-weight: 500;
-  letter-spacing: 2px;
-  font-size: 16px;
-  text-transform: capitalize;
-  color: var(--background-color);
-  opacity: 0;
-  transition: 0.5s;
-}
+  /* Hamburger menu text */
+  .menu a {
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--background-color);
+    opacity: 0;
+    transition: 0.5s;
+  }
 
-.menu li {
-  border-top: 1px solid rgb(0, 0, 0);
+  .menu li {
+    border-top: 1px solid rgb(0, 0, 0);
+    margin: 0 54px;
+    opacity: 0;
+    transition: 0.5s;
+  }
 
-  margin: 0 54px;
-  opacity: 0;
-  transition: 0.5s;
-}
+  .menu-btn:checked ~ .menu a,
+  .menu-btn:checked ~ .menu li {
+    opacity: 1;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+  }
 
-.menu-btn:checked ~ .menu a,
-.menu-btn:checked ~ .menu li {
-  opacity: 1;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
-}
+  .menu-btn {
+    display: none;
+  }
 
-.menu-btn {
-  display: none;
-}
+  .menu-icon {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 24px 10px;
+    -webkit-tap-highlight-color: var(--text-color);
+    z-index: 20;
+  }
 
-.menu-icon {
-  display: inline-block;
-  position: absolute;
-  top:0;
-  right:0;
-  cursor: pointer;
-  width:50px;
-  height:50px;
-  padding: 24px 10px;
-  -webkit-tap-highlight-color: var(--text-color);
-  z-index:20;
-}
+  .navicon {
+    background: var(--text-color);
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: relative;
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-.navicon {
-  background:var(--text-color);
-  display: block;
-  height: 3px;
-  width: 100%;
-  position: relative;
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  
+  .navicon:before,
+  .navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: var(--text-color);
+    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
 
-}
+  .navicon:before {
+    top: 9px;
+  }
 
-.navicon:before,
-.navicon:after {
-  content: "";
-  display: block;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background:var(--text-color);
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+  .navicon:after {
+    bottom: 9px;
+  }
 
-.navicon:before {
-  top: 9px;
-}
+  /* Hamburger Menu Animation Start */
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
 
-.navicon:after {
-  bottom: 9px;
-}
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
 
-/* Hamburger Menu Animation Start */
-.menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
-}
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+    top: 0;
+  }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
-}
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    bottom: 0;
+  }
 
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
-  top: 0;
-}
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  bottom: 0;
-}
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: var(--text-color);
+    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  }
+  /* Hamburger Menu Animation End */
 
-.menu-btn:checked ~ .menu-icon .navicon {
-  background: var(--text-color);
-  transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
-/* Hamburger Menu Animation End */
+  /* Navbar Container */
+  .navtext-container {
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-/* Navbar Container */
-.navtext-container {
-  width: 100%;
-
-  position: absolute;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Navbar Text */
-.navtext {
-  position: absolute;
-  text-transform: uppercase;
-  color:var(--text-color);
-  letter-spacing: 4px;
-  font-size: 20px;
-}
+  /* Navbar Text */
+  .navtext {
+    position: absolute;
+    text-transform: uppercase;
+    color: var(--text-color);
+    letter-spacing: 4px;
+    font-size: 20px;
+  }
 
   .title {
-      font-size: 1.5rem; 
-
+    font-size: 1.5rem;
   }
 
   .hamburger {
-      height: 50px;
-      width: 50px;
+    height: 50px;
+    width: 50px;
   }
 
-  .sidebar{
-    display:none;
+  .sidebar {
+    display: none;
   }
-  .content{
-    margin-left:0px;
-    margin-top:100px;
+
+  .content {
+    margin-left: 0px;
+    margin-top: 100px;
   }
+
   .concertPhoto {
-      margin-top: 130px; 
+    margin-top: 130px;
   }
+
   .fancy {
-    width: 80%; /* 幅を画面の80%に変更 */
+    width: 80%; 
     height: 50px;
     font-size: 1.2rem;
   }
@@ -625,60 +615,68 @@ label[for="scheduleCheck"] {
     left: 5px;
     width: 15px;
   }
- /* チェックボックス用ラベルをボタンに */
-label[for="scheduleCheck"] {
-  cursor: pointer;
+
+  /* チェックボックス用ラベルをボタンに */
+  label[for="scheduleCheck"] {
+    cursor: pointer;
+  }
+
+  /* 初期状態の .schedule_card */
+  .schedule_card .schedule_content {
+    transform: translateY(75px);
+    opacity: 1;
+    transition: all 0.25s ease-in-out;
+  }
+
+  /* チェックされた時だけ transform & opacity を変更 */
+  #scheduleCheck:checked ~ .schedule_card .schedule_content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: block; 
+  }
 }
 
-/* 初期状態の .schedule_card */
-.schedule_card .schedule_content {
-  transform: translateY(75px);
-  opacity: 1;
-  transition: all .25s ease-in-out;
-}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 
-/* チェックされた時だけ transform & opacity を変更 */
-#scheduleCheck:checked ~ .schedule_card .schedule_content {
-  transform: translateY(0);
-  opacity: 1;
-}}
-  
-    
-    @keyframes slide-in-top {
-      0% {
-        transform: translateY(-50px);
-        opacity: 0;
-      }
-    
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* レスポンシブ対応 */
 @media screen and (max-width: 480px) {
-  #icon{
-      width: 15vw;
-      height:15vw;
+  #icon {
+    width: 15vw;
+    height: 15vw;
   }
+
   .title {
-      font-size: 1.2rem; 
-
+    font-size: 1.2rem;
   }
- 
- 
 
- 
-  .fancy{
-      width:60vw;
-      font-size:1.2rem;
-      margin:10px 0; 
-      
+  .fancy {
+    width: 60vw;
+    font-size: 1.2rem;
+    margin: 10px 0;
   }
+
   .fancyContainer {
-      height: auto; 
-      flex-direction: column; 
+    height: auto;
+    flex-direction: column;
   }
-
 }
