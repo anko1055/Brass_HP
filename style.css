@@ -451,6 +451,9 @@ label[for="scheduleCheck"] {
   color:var(--text-color);
 }
 
+.link_color{
+  color:var(--text-color);
+}
 
 @media screen and (max-width: 768px) {
   /* Nav items */
