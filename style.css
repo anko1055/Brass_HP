@@ -60,15 +60,15 @@ body {
   width: 200px; 
   height: 100vh; 
   margin-top: 100px;
-  position: fixed; /* 固定位置 */
+  position: fixed; 
   left: 0;
   color: var(--text-color);
   background-color: var(--background-color);
 }
 
 .sidebar ul {
-  list-style: none; /* リストのスタイルを解除 */
-  padding: 20px; /* パディング */
+  list-style: none; 
+  padding: 20px; 
 }
 
 .sidebar ul li {
@@ -79,9 +79,9 @@ body {
 .sidebar ul li a {
   text-decoration: none;
   color: var(--text-color);
-  padding: 10px; /* パディング */
-  display: block; /* ブロック要素にする */
-  border-radius: 5px; /* 角を丸くする */
+  padding: 10px; 
+  display: block; 
+  border-radius: 5px; 
 }
 
 .sidebar ul li a:hover {
@@ -102,13 +102,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0; /* ボタン間のスペースを調整 */
+  margin: 20px 0; 
 }
 
 /* ボタンの基本デザイン */
 .fancy {
-  width: 300px; /* 幅を固定値で統一 */
-  height: 80px; /* 高さも固定値 */
+  width: 300px; 
+  height: 80px; 
   background-color: transparent;
   border: 2px solid var(--text-color);
   display: flex;
@@ -192,7 +192,7 @@ body {
 
 .fancy:hover .text {
   color: var(--background-color);
-  letter-spacing: 0.15em; /* 少し広げる */
+  letter-spacing: 0.15em; 
 }
 
 .fancy:hover .top-key {
@@ -281,9 +281,9 @@ body {
 }
 
 .event {
-  display: flex; /* フレックスボックスを使用 */
-  align-items: flex-start; /* 上揃え */
-  margin-bottom: 20px; /* 各イベントの間隔 */
+  display: flex; 
+  align-items: flex-start; 
+  margin-bottom: 20px; 
 }
 
 h1 {
@@ -447,141 +447,140 @@ label[for="scheduleCheck"] {
 }
 
 @media screen and (max-width: 768px) {
-  /* Nav items */
-  .menu {
-    display: block !important;
-    list-style: none;
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 0;
-    margin-top: 52px;
-    padding: 0 0 10px 0;
-    clear: both;
-    background: var(--text-color);
-    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-    transform: scale(1, 0);
-    transform-origin: top;
-  }
+/*humberger menu */
+.menu {
+  display: block !important;
+  list-style: none;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  margin-top: 52px;
+  padding: 0 0 10px 0;
+  clear: both;
+  background: var(--text-color);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  transform: scale(1, 0);
+  transform-origin: top;
+}
 
-  /* Hamburger menu button */
-  .menu-btn:checked ~ .menu {
-    transform: scale(1, 1);
-    transform-origin: top;
-    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  }
+/* Hamburger menu button */
+.menu-btn:checked ~ .menu {
+  transform: scale(1, 1);
+  transform-origin: top;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
 
-  /* Hamburger menu text */
-  .menu a {
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 2px;
-    font-size: 16px;
-    text-transform: capitalize;
-    color: var(--background-color);
-    opacity: 0;
-    transition: 0.5s;
-  }
+/* Hamburger menu text */
+.menu a {
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: var(--background-color);
+  opacity: 0;
+  transition: 0.5s;
+}
 
-  .menu li {
-    border-top: 1px solid rgb(0, 0, 0);
-    margin: 0 54px;
-    opacity: 0;
-    transition: 0.5s;
-  }
+.menu li {
+  border-top: 1px solid rgb(0, 0, 0);
+  margin: 0 54px;
+  opacity: 0;
+  transition: 0.5s;
+}
 
-  .menu-btn:checked ~ .menu a,
-  .menu-btn:checked ~ .menu li {
-    opacity: 1;
-    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
-  }
+.menu-btn:checked ~ .menu a,
+.menu-btn:checked ~ .menu li {
+  opacity: 1;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
+}
 
-  .menu-btn {
-    display: none;
-  }
+.menu-btn {
+  display: none;
+}
 
-  .menu-icon {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    padding: 24px 10px;
-    -webkit-tap-highlight-color: var(--text-color);
-    z-index: 20;
-  }
+.menu-icon {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  padding: 24px 10px;
+  -webkit-tap-highlight-color: var(--text-color);
+  z-index: 20;
+}
 
-  .navicon {
-    background: var(--text-color);
-    display: block;
-    height: 3px;
-    width: 100%;
-    position: relative;
-    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  }
+.navicon {
+  background: var(--text-color);
+  display: block;
+  height: 3px;
+  width: 100%;
+  position: relative;
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
 
-  .navicon:before,
-  .navicon:after {
-    content: "";
-    display: block;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    background: var(--text-color);
-    transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  }
+.navicon:before,
+.navicon:after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: var(--text-color);
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+}
 
-  .navicon:before {
-    top: 9px;
-  }
+.navicon:before {
+  top: 9px;
+}
 
-  .navicon:after {
-    bottom: 9px;
-  }
+.navicon:after {
+  bottom: 9px;
+}
 
-  /* Hamburger Menu Animation Start */
-  .menu-btn:checked ~ .menu-icon .navicon:before {
-    transform: rotate(-45deg);
-  }
+/* Hamburger Menu Animation Start */
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
 
-  .menu-btn:checked ~ .menu-icon .navicon:after {
-    transform: rotate(45deg);
-  }
+.menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
 
-  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
-    top: 0;
-  }
+.menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
 
-  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-    bottom: 0;
-  }
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
+  top: 0;
+}
 
-  .menu-btn:checked ~ .menu-icon .navicon {
-    background: var(--text-color);
-    transition: 0.2192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-  }
-  /* Hamburger Menu Animation End */
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  bottom: 0;
+}
+/* Hamburger Menu Animation End */
 
-  /* Navbar Container */
-  .navtext-container {
-    width: 100%;
-    position: absolute;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+/* Navbar Container */
+.navtext-container {
+  width: 100%;
+  position: absolute;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  /* Navbar Text */
-  .navtext {
-    position: absolute;
-    text-transform: uppercase;
-    color: var(--text-color);
-    letter-spacing: 4px;
-    font-size: 20px;
-  }
+/* Navbar Text */
+.navtext {
+  position: absolute;
+  text-transform: uppercase;
+  color: var(--text-color);
+  letter-spacing: 4px;
+  font-size: 20px;
+}
 
   .title {
     font-size: 1.5rem;
