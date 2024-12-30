@@ -210,7 +210,7 @@ body {
 .sns_card {
   width: 100vw;
   height: fit-content;
-  background-color: var(--background-color);
+  /*background-color: var(--background-color);*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +318,6 @@ p {
 }
 
 footer {
-  background-color: var(--background-color);
   color: var(--text-color);
   padding: 20px 0;
   text-align: center;
