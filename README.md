@@ -8,4 +8,4 @@
 
 ## 問題点
 - 年間予定の12月、定演の写真で全員写ってる写真がなかった
-- androidでダークモード対応していない(iPhone,windows,Ubuntu desktopでは対応していることを確認済み)
+- androidでダークモード対応していない(ios,windows,Ubuntu desktopでは対応していることを確認済み)
