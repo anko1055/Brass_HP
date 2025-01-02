@@ -288,12 +288,24 @@ body {
   margin-bottom: 20px; 
 }
 
-h1 {
+h1{
   text-align: center;
   margin-bottom: 20px;
   font-size: 2.5em;
+  display: inline-block;
+  font-weight:bold;
+  border-bottom: double 3px #00a7eb;
+  margin: 0 auto 50px;
+  padding: 0 0 5px 0;
 }
 
+h3{
+  display: inline-block;
+  font-weight:bold;
+  border-left: solid 3px #00a7eb;
+  margin: 0 auto 50px;
+  padding: 5px 0 5px 5px;
+}
 .event-poster img {
   width: 100%;
   height: auto;
@@ -332,7 +344,7 @@ footer {
   display: flex;
   text-align: left;
   flex-direction: column;
-  margin-top: 100px;
+
 }
 
 .schedule_card {
@@ -655,7 +667,7 @@ label[for="scheduleCheck"] {
     display: flex;
     text-align: left;
     flex-direction: column;
-    margin-top: 100px;
+
   }
 }
 
