@@ -1,728 +1,884 @@
+/*==================================================
+ 1. ルートと基本スタイル (テーマとリセット)
+==================================================*/
+
+/* ライトモード用のスタイル */
 :root {
-  --text-color: #000000;
-  --background-color: #fff;
+ --text-color: #000000;
+ --background-color: #fff;
 }
- 
+
 /* ダークモード用のスタイル */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --text-color: #fff;
-    --background-color: #000000;
-  }
-}
- 
-/* スタイルの適用 */
-body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; 
-  text-align: center;
-  font-family: 'UD デジタル 教科書体 N-B', serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
+ :root {
+  --text-color: #fff;
+  --background-color: #000000;
+ }
 }
 
-.content {
-  flex: 1;
-  padding-bottom: 150px; 
-}
-
-.title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 100%;
-  font-family: 'UD デジタル 教科書体 N-B', serif;
-  font-size: 2rem; 
-  color: var(--text-color);
-  background-color: var(--background-color);
-}
-
-.menu-btn, .menu-icon, .menu {
-  display: none;
-}
-
-.main {
-  margin-top: 100px;
-}
-
-/* Navbar & Navmenu color */
+/* ボックスモデルのリセット */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 
+/* body - スタイルの適用 */
+body {
+ /* レイアウト */
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ /* ボックスモデル */
+ margin: 0;
+ padding: 0;
+ /* 背景と色 */
+ background-color: var(--background-color);
+ color: var(--text-color);
+ /* テキストとフォント */
+ text-align: center;
+ font-family: 'UD デジタル 教科書体 N-B', serif;
+}
+
+
+/*==================================================
+ 2. タイポグラフィ (見出しと段落)
+==================================================*/
+
+h1 {
+ /* レイアウト */
+ display: inline-block;
+ margin: 0 auto 50px;
+ padding: 0 0 5px 0;
+ /* テキストとフォント */
+ font-size: 2.5em;
+ font-weight: bold;
+ text-align: center;
+ /* ボーダー */
+ border-bottom: double 5px #00a7eb;
+}
+
+h2 {
+ /* ボックスモデル */
+ margin: 20px 0 10px;
+ /* テキストとフォント */
+ font-size: 1.8em;
+}
+
+h3 {
+ /* レイアウト */
+ display: inline-block;
+ margin: 0 auto 50px;
+ padding: 5px 0 5px 5px;
+ /* テキストとフォント */
+ font-size: 1.5em;
+ font-weight: bold;
+ /* ボーダー */
+ border-left: solid 3px #00a7eb;
+}
+
+p {
+ /* ボックスモデル */
+ margin: 10px 0;
+}
+
+
+/*==================================================
+ 3. ヘッダーとナビゲーション (タイトル、サイドバー、メニュー)
+==================================================*/
+
+/* .title - ページタイトル部分 */
+.title {
+ /* レイアウト */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ width: 100%;
+ /* 背景と色 */
+ background-color: var(--background-color);
+ color: var(--text-color);
+ /* テキストとフォント */
+ font-family: 'UD デジタル 教科書体 N-B', serif;
+ font-size: 2rem;
+}
+
+/* Sidebar - デスクトップ用ナビゲーション */
 .sidebar {
-  width: 200px; 
-  height: 100vh; 
-  margin-top: 100px;
-  position: fixed; 
-  left: 0;
-  color: var(--text-color);
-  background-color: var(--background-color);
+ /* レイアウト */
+ position: fixed;
+ left: 0;
+ /* ボックスモデル */
+ width: 200px;
+ height: 100vh;
+ margin-top: 100px;
+ /* 背景と色 */
+ background-color: var(--background-color);
+ color: var(--text-color);
 }
 
 .sidebar ul {
-  list-style: none; 
-  padding: 20px; 
+ /* レイアウト */
+ list-style: none;
+ /* ボックスモデル */
+ padding: 20px;
 }
 
 .sidebar ul li {
-  margin: 10px 0; 
-  border-bottom: 1px solid var(--text-color);
+ /* ボックスモデル */
+ margin: 10px 0;
+ /* ボーダー */
+ border-bottom: 1px solid var(--text-color);
 }
 
 .sidebar ul li a {
-  text-decoration: none;
-  color: var(--text-color);
-  padding: 10px; 
-  display: block; 
-  border-radius: 5px; 
+ /* レイアウト */
+ display: block;
+ /* ボックスモデル */
+ padding: 10px;
+ border-radius: 5px;
+ /* テキストとフォント */
+ text-decoration: none;
+ color: var(--text-color);
 }
 
 .sidebar ul li a:hover {
-  color: var(--background-color);
-  background-color: var(--text-color);
+ /* 背景と色 */
+ background-color: var(--text-color);
+ color: var(--background-color);
 }
 
+/* ハンバーガーメニュー関連 (初期状態: 非表示) */
+.menu-btn, .menu-icon, .menu {
+ display: none;
+}
+
+
+/*==================================================
+ 4. メインコンテンツ
+==================================================*/
+
+/* .content - メインコンテンツ全体 */
 .content {
-  margin-left: 220px; 
-  margin-top: 100px;
+ /* レイアウト */
+ flex: 1; /* bodyをflexにしたため、これを入れる */
+ /* ボックスモデル */
+ margin-left: 220px; /* sidebarの幅 + 余白 */
+ margin-top: 100px;
+ padding-bottom: 150px;
+}
+
+.main {
+ /* ボックスモデル */
+ margin-top: 100px;
+}
+
+.container {
+ /* レイアウト */
+ /* ボックスモデル */
+ width: 80%;
+ max-width: 800px;
+ margin: 20px auto;
+ padding: 20px;
+ border-radius: 8px;
+ /* 背景と色 */
+ background: var(--background-color);
+ /* その他 */
+ box-shadow: 0 0 10px var(--text-color);
 }
 
 .concertPhoto {
-  margin: 0;
+ /* ボックスモデル */
+ margin: 0;
 }
 
+.information {
+ /* レイアウト */
+ display: block;
+ /* ボックスモデル */
+ width: 500px;
+ margin: 0 auto;
+}
+
+.about_content {
+ /* レイアウト */
+ display: flex;
+ flex-direction: column;
+ /* ボックスモデル */
+ margin: 10px;
+ /* テキストとフォント */
+ text-align: left;
+}
+
+
+/*==================================================
+ 5. コンポーネント
+==================================================*/
+
+/* 装飾ボタン (Fancy Button) */
 .fancyContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0; 
+ /* レイアウト */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* ボックスモデル */
+ margin: 20px 0;
 }
 
-
-
-/* ボタンの基本デザイン */
 .fancy {
-  width: 300px; 
-  height: 80px; 
-  background-color: transparent;
-  border: 2px solid var(--text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--text-color);
-  position: relative;
-  text-decoration: none;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
+ /* レイアウト */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ overflow: hidden;
+ /* ボックスモデル */
+ width: 300px;
+ height: 80px;
+ border: 2px solid var(--text-color);
+ /* 背景と色 */
+ background-color: transparent;
+ color: var(--text-color);
+ /* テキストとフォント */
+ font-size: 1.5rem;
+ font-weight: bold;
+ text-decoration: none;
+ /* その他 */
+ transition: all 0.3s ease-in-out;
 }
 
-/* ボタン内のテキストデザイン */
 .fancy .text {
-  z-index: 2;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: all 0.3s ease-in-out;
-  color: var(--text-color);
+ /* テキストとフォント */
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ color: var(--text-color);
+ /* その他 */
+ z-index: 2;
+ transition: all 0.3s ease-in-out;
 }
 
-/* ボタン内の装飾要素 */
 .fancy::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  width: 20px;
-  height: 2px;
-  background: var(--text-color);
-  transform: translateY(-50%);
-  transition: all 0.3s ease-in-out;
+ /* レイアウト */
+ content: "";
+ position: absolute;
+ top: 50%;
+ left: 10%;
+ /* ボックスモデル */
+ width: 20px;
+ height: 2px;
+ /* 背景と色 */
+ background: var(--text-color);
+ /* その他 */
+ transform: translateY(-50%);
+ transition: all 0.3s ease-in-out;
 }
 
-/* トップラインのデザイン */
-.fancy .top-key {
-  position: absolute;
-  height: 2px;
-  width: 50px;
-  top: -5px;
-  left: 10%;
-  background: var(--text-color);
-  transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
-}
-
-/* ボトムライン1 */
-.fancy .bottom-key-1 {
-  position: absolute;
-  height: 2px;
-  width: 50px;
-  bottom: -5px;
-  right: 10%;
-  background: var(--text-color);
-  transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
-}
-
-/* ボトムライン2 */
+.fancy .top-key,
+.fancy .bottom-key-1,
 .fancy .bottom-key-2 {
-  position: absolute;
-  height: 2px;
-  width: 20px;
-  bottom: -5px;
-  right: 5%;
-  background: var(--text-color);
-  transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
+ /* レイアウト */
+ position: absolute;
+ /* ボックスモデル */
+ height: 2px;
+ /* 背景と色 */
+ background: var(--text-color);
 }
 
-/* ホバー時のデザイン変更 */
+.fancy .top-key {
+ /* ボックスモデル */
+ width: 50px;
+ top: -5px;
+ left: 10%;
+ /* その他 */
+ transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.fancy .bottom-key-1 {
+ /* ボックスモデル */
+ width: 50px;
+ bottom: -5px;
+ right: 10%;
+ /* その他 */
+ transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
+}
+
+.fancy .bottom-key-2 {
+ /* ボックスモデル */
+ width: 20px;
+ bottom: -5px;
+ right: 5%;
+ /* その他 */
+ transition: width 0.3s ease-in-out, right 0.3s ease-in-out;
+}
+
+/* 装飾ボタンのホバーエフェクト (Fancy Button Hover) */
 .fancy:hover {
-  background: var(--text-color);
-  color: var(--background-color);
+ /* 背景と色 */
+ background: var(--text-color);
+ color: var(--background-color);
 }
 
 .fancy:hover::before {
-  width: 10px;
-  background: var(--background-color);
-  left: 5%;
+ /* レイアウト */
+ left: 5%;
+ /* ボックスモデル */
+ width: 10px;
+ /* 背景と色 */
+ background: var(--background-color);
 }
 
 .fancy:hover .text {
-  color: var(--background-color);
-  letter-spacing: 0.15em; 
+ /* テキストとフォント */
+ color: var(--background-color);
+ letter-spacing: 0.15em;
 }
 
 .fancy:hover .top-key {
-  left: 0;
-  width: 0;
+ /* レイアウト */
+ left: 0;
+ /* ボックスモデル */
+ width: 0;
 }
 
 .fancy:hover .bottom-key-1,
 .fancy:hover .bottom-key-2 {
-  right: 0;
-  width: 0;
+ /* レイアウト */
+ right: 0;
+ /* ボックスモデル */
+ width: 0;
 }
 
 
-
-/*sns card*/
-.sns_card {
-  width: 100vw;
-  height: fit-content;
-  /*background-color: var(--background-color);*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  gap: 20px;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-}
-
-/* for all social containers */
-.socialContainer {
-  width: 40px;
-  height: 50px;
-  background-color: var(--text-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  transition-duration: 1.2s;
-  border-radius: 15px 0 15px 0px;
-}
-
-/* instagram */
-.containerOne:hover {
-  background-color: #d62976;
-  transition-duration: 1.2s;
-}
-
-/* twitter */
-.containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: 1.2s;
-}
-
-/* Whatsapp */
-.containerFour:hover {
-  background-color: #f90101;
-  transition-duration: 1.2s;
-}
-
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: 1.2s;
-}
-
-.socialSvg {
-  width: 17px;
-}
-
-.socialSvg path {
-  fill: var(--background-color);
-}
-
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 1.2s both;
-}
-
-.container {
-  width: 80%;
-  max-width: 800px;
-  margin: 20px auto;
-  background: var(--background-color);
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px var(--text-color);
-}
-
+/* イベントカード (Event Card) */
 .event {
-  display: flex; 
-  align-items: flex-start; 
-  margin-bottom: 20px; 
+ /* レイアウト */
+ display: flex;
+ align-items: flex-start;
+ /* ボックスモデル */
+ margin-bottom: 20px;
 }
 
-h1{
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 2.5em;
-  display: inline-block;
-  font-weight:bold;
-  border-bottom: double 5px #00a7eb;
-  margin: 0 auto 50px;
-  padding: 0 0 5px 0;
-}
-
-h3{
-  display: inline-block;
-  font-weight:bold;
-  border-left: solid 3px #00a7eb;
-  margin: 0 auto 50px;
-  padding: 5px 0 5px 5px;
-  font-size: 1.5em;
-}
 .event-poster img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+ /* ボックスモデル */
+ width: 100%;
+ height: auto;
+ border-radius: 8px;
 }
 
 .event_description {
-  text-align: left;
-  margin-left: 20px;
-}
-
-h2 {
-  margin: 20px 0 10px;
-  font-size: 1.8em;
-}
-
-h3 {
-  margin: 15px 0;
-  font-size: 1.5em;
-}
-
-p {
-  margin: 10px 0;
-}
-
-footer {
-  color: var(--text-color);
-  padding: 20px 0;
-  text-align: center;
-  position: relative;
-  bottom: 0;
-  width: 100%;
+ /* ボックスモデル */
+ margin-left: 20px;
+ /* テキストとフォント */
+ text-align: left;
 }
 
 .divider {
-  border-bottom: double 5px #00a7eb;
-  padding-bottom: 10px; 
-  margin-bottom: 10px; 
+ /* ボックスモデル */
+ padding-bottom: 10px;
+ margin-bottom: 10px;
+ /* ボーダー */
+ border-bottom: double 5px #00a7eb;
 }
 
-.information{
-  width: 500px;
-  display: block;
-  margin: 0 auto;
+
+/* スケジュールカード (Schedule Card) */
+#scheduleCheck {
+ display: none;
 }
 
-.about_content{
-  display: flex;
-  text-align: left;
-  flex-direction: column;
-  margin:10px;
-
+label[for="scheduleCheck"] {
+ cursor: pointer;
 }
 
 .schedule_card {
-  width: 100%;
-  max-width: 450px; 
-  height: 150px;
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 0px 10px -6px #6f6f6f;
-  margin: 40px auto; 
+ /* レイアウト */
+ position: relative;
+ overflow: hidden;
+ /* ボックスモデル */
+ width: 100%;
+ max-width: 450px;
+ height: 150px;
+ margin: 40px auto;
+ border-radius: 8px;
+ /* その他 */
+ box-shadow: 0px 0px 10px -6px #6f6f6f;
 }
 
 .schedule_card img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+ /* レイアウト */
+ display: block;
+ /* ボックスモデル */
+ max-width: 100%;
+ height: auto;
 }
 
 .schedule_title {
-  font-size: 20px;
-  text-align: left;
-  position: relative;
-  top: -20px;
+ /* レイアウト */
+ position: relative;
+ top: -20px;
+ /* テキストとフォント */
+ font-size: 20px;
+ text-align: left;
 }
 
 .schedule_content {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 20px 20px; 
-  background-color: var(--background-color);
-  border-top-left-radius: 30px; 
-  transform: translateY(75px);
+ /* レイアウト */
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ width: 100%;
+ /* ボックスモデル */
+ padding: 20px 20px;
+ border-top-left-radius: 30px;
+ /* 背景と色 */
+ background-color: var(--background-color);
+ /* その他 */
+ transform: translateY(75px);
+ transition: all .25s ease-in-out;
 }
 
 .schedule_content::before {
-  opacity: 1;
-  content: '';
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  border-radius: 30px;
-  background-color: transparent;
-  box-shadow: 60px 60px var(--background-color);
-  top: -72%;
-  right: -10%;
+ /* レイアウト */
+ content: '';
+ position: absolute;
+ top: -72%;
+ right: -10%;
+ /* ボックスモデル */
+ width: 110px;
+ height: 110px;
+ border-radius: 30px;
+ /* 背景と色 */
+ background-color: transparent;
+ /* その他 */
+ box-shadow: 60px 60px var(--background-color);
+ opacity: 1;
 }
 
 .schedule_description {
-  opacity: 0;
-  transition: opacity .5s;
-  position: relative;
-  font-size: 12px;
-  line-height: 1.2;
-  text-align: center;
+ /* レイアウト */
+ position: relative;
+ /* テキストとフォント */
+ font-size: 12px;
+ line-height: 1.2;
+ text-align: center;
+ /* その他 */
+ opacity: 0;
+ transition: opacity .5s;
 }
 
 .schedule_description p {
-  padding: 0;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  font-size: 10px;
-  transform: translateY(-40%);
+ /* レイアウト */
+ position: absolute;
+ top: 10px;
+ left: 0;
+ /* ボックスモデル */
+ padding: 0;
+ /* テキストとフォント */
+ font-size: 10px;
+ /* その他 */
+ transform: translateY(-40%);
 }
 
+/* スケジュールカードのホバー/チェック状態 */
 .schedule_card:hover .schedule_content {
-  transform: translateY(0);
-  opacity: 1;
+ transform: translateY(0);
+ opacity: 1;
 }
 
 .schedule_card:hover .schedule_description {
-  display: block;
-  opacity: 1;
+ display: block;
+ opacity: 1;
 }
 
-/* チェックボックスを非表示にする */
-#scheduleCheck {
-  display: none;
-}
-
-/* チェックボックス用ラベルをボタンに */
-label[for="scheduleCheck"] {
-  cursor: pointer;
-}
-
-/* 初期状態の .schedule_card */
-.schedule_card .schedule_content {
-  transform: translateY(75px);
-  opacity: 1;
-  transition: all .25s ease-in-out;
-}
-
-/* チェックされた時だけ transform & opacity を変更 */
 #scheduleCheck:checked ~ .schedule_card .schedule_content {
-  transform: translateY(0);
-  opacity: 1;
+ transform: translateY(0);
+ opacity: 1;
 }
 
-/*link*/
+
+/* SNSカード (SNS Card) */
+.sns_card {
+ /* レイアウト */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ position: relative;
+ left: 0;
+ bottom: 0;
+ /* ボックスモデル */
+ width: 100vw;
+ height: fit-content;
+ padding: 0;
+ gap: 20px;
+ /* その他 */
+ z-index: 10;
+}
+
+.socialContainer {
+ /* レイアウト */
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+ /* ボックスモデル */
+ width: 40px;
+ height: 50px;
+ border-radius: 15px 0 15px 0px;
+ /* 背景と色 */
+ background-color: var(--text-color);
+ /* その他 */
+ transition-duration: 1.2s;
+}
+
+.socialSvg {
+ /* ボックスモデル */
+ width: 17px;
+}
+
+.socialSvg path {
+ /* 背景と色 */
+ fill: var(--background-color);
+}
+
+/* SNSのホバーエフェクト (SNS Hover Effects) */
+.containerOne:hover {
+ background-color: #d62976;
+ transition-duration: 1.2s;
+}
+
+.containerTwo:hover {
+ background-color: #00acee;
+ transition-duration: 1.2s;
+}
+
+.containerFour:hover {
+ background-color: #f90101;
+ transition-duration: 1.2s;
+}
+
+.socialContainer:active {
+ transform: scale(0.9);
+ transition-duration: 1.2s;
+}
+
+.socialContainer:hover .socialSvg {
+ animation: slide-in-top 1.2s both;
+}
+
+
+/* リンクリスト (Link List) */
 .two-column-list {
-  list-style-type: none; 
-  display: flex;
-  flex-wrap: wrap; 
-  padding: 0;
-  margin: 0;
+ /* レイアウト */
+ display: flex;
+ flex-wrap: wrap;
+ list-style-type: none;
+ /* ボックスモデル */
+ padding: 0;
+ margin: 0;
 }
 
 .two-column-list li {
-  width: 50%; 
-  box-sizing: border-box; 
-  padding: 5px; 
-  color: var(--text-color);
+ /* ボックスモデル */
+ width: 50%;
+ box-sizing: border-box;
+ padding: 5px;
+ /* 背景と色 */
+ color: var(--text-color);
 }
 
 .link_color {
-  color: var(--text-color);
+ /* 背景と色 */
+ color: var(--text-color);
 }
 
+
+/*==================================================
+ 6. フッター
+==================================================*/
+
+footer {
+ /* レイアウト */
+ position: relative;
+ bottom: 0;
+ width: 100%;
+ /* ボックスモデル */
+ padding: 20px 0;
+ /* 背景と色 */
+ color: var(--text-color);
+ /* テキストとフォント */
+ text-align: center;
+}
+
+
+/*==================================================
+ 7. アニメーション
+==================================================*/
+
+@keyframes slide-in-top {
+ 0% {
+  transform: translateY(-50px);
+  opacity: 0;
+ }
+
+ 100% {
+  transform: translateY(0);
+  opacity: 1;
+ }
+}
+
+
+/*==================================================
+ 8. レスポンシブデザイン (最大幅: 768px)
+==================================================*/
+
 @media screen and (max-width: 768px) {
-/*humberger menu */
-.menu {
-  display: block !important;
-  list-style: none;
+ 
+ /* タイトル */
+ .title {
+  font-size: 1.5rem;
+ }
+ 
+ /* サイドバーとコンテンツのレイアウト */
+ .sidebar {
+  display: none;
+ }
+
+ .content {
+  margin-left: 0px;
+  margin-top: 100px;
+ }
+
+ /* メイン */
+ .concertPhoto {
+  margin-top: 80px;
+ }
+
+ .information {
+  width: 80vw;
+ }
+
+ .about_content {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+ }
+
+ /* フッター */
+ footer {
+  display: block;
+  background-color: var(--background-color);
+  color: var(--text-color);
+ }
+
+ /* 装飾ボタン (Fancy Button) */
+ .fancy {
+  width: 80%;
+  height: 50px;
+  font-size: 1.2rem;
+ }
+
+ .fancy::before {
+  left: 5px;
+  width: 15px;
+ }
+ 
+ /* ハンバーガーメニュー (デフォルトの `display: none;` を上書き) */
+ .menu {
+  /* レイアウト */
+  display: block !important; 
   position: absolute;
   width: 100%;
   height: auto;
   top: 0;
+  clear: both;
+  z-index: 2; /* .menu-iconより低い */
+  /* ボックスモデル */
   margin-top: 52px;
   padding: 0 0 10px 0;
-  clear: both;
+  /* 背景と色 */
   background: var(--text-color);
-  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+  /* その他 */
   transform: scale(1, 0);
   transform-origin: top;
-}
+  transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
+ }
 
-/* Hamburger menu button */
-.menu-btn:checked ~ .menu {
+ /* ハンバーガーメニューボタン */
+ .menu-btn:checked ~ .menu {
   transform: scale(1, 1);
   transform-origin: top;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+ }
 
-/* Hamburger menu text */
-.menu a {
+ /* ハンバーガーメニューのテキスト */
+ .menu a {
+  /* テキストとフォント */
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 2px;
   font-size: 16px;
   text-transform: capitalize;
   color: var(--background-color);
+  /* その他 */
   opacity: 0;
   transition: 0.5s;
-}
+ }
 
-.menu li {
-  border-top: 1px solid rgb(0, 0, 0);
+ .menu li {
+  /* ボックスモデル */
   margin: 0 54px;
+  /* ボーダー */
+  border-top: 1px solid rgb(0, 0, 0);
+  /* その他 */
   opacity: 0;
   transition: 0.5s;
-}
+ }
 
-.menu-btn:checked ~ .menu a,
-.menu-btn:checked ~ .menu li {
+ .menu-btn:checked ~ .menu a,
+ .menu-btn:checked ~ .menu li {
   opacity: 1;
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.2s;
-}
+ }
 
-.menu-btn {
+ .menu-btn {
   display: none;
-}
+ }
 
-.menu-icon {
+ .menu-icon {
+  /* レイアウト */
   display: inline-block;
   position: absolute;
   top: 0;
   right: 0;
-  cursor: pointer;
+  /* ボックスモデル */
   width: 50px;
   height: 50px;
   padding: 24px 10px;
+  /* その他 */
+  cursor: pointer;
   -webkit-tap-highlight-color: var(--text-color);
   z-index: 20;
-}
+ }
 
-.navicon {
-  background: var(--text-color);
+ .navicon {
+  /* レイアウト */
   display: block;
+  position: relative;
+  /* ボックスモデル */
   height: 3px;
   width: 100%;
-  position: relative;
+  /* 背景と色 */
+  background: var(--text-color);
+  /* その他 */
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+ }
 
-.navicon:before,
-.navicon:after {
+ .navicon:before,
+ .navicon:after {
+  /* レイアウト */
   content: "";
   display: block;
+  position: absolute;
+  /* ボックスモデル */
   height: 100%;
   width: 100%;
-  position: absolute;
+  /* 背景と色 */
   background: var(--text-color);
+  /* その他 */
   transition: 0.3192s cubic-bezier(0.04, 0.04, 0.12, 0.96) 0.1008s;
-}
+ }
 
-.navicon:before {
+ .navicon:before {
   top: 9px;
-}
+ }
 
-.navicon:after {
+ .navicon:after {
   bottom: 9px;
-}
+ }
 
-/* Hamburger Menu Animation Start */
-.menu-btn:checked ~ .menu-icon .navicon {
+ /* ハンバーガーメニューのアニメーション開始 */
+ .menu-btn:checked ~ .menu-icon .navicon {
   background: transparent;
-}
+ }
 
-.menu-btn:checked ~ .menu-icon .navicon:before {
+ .menu-btn:checked ~ .menu-icon .navicon:before {
   transform: rotate(-45deg);
-}
+  top: 0; /* 追加 */
+ }
 
-.menu-btn:checked ~ .menu-icon .navicon:after {
+ .menu-btn:checked ~ .menu-icon .navicon:after {
   transform: rotate(45deg);
-}
+  bottom: 0; /* 追加 */
+ }
 
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before {
-  top: 0;
-}
-
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  bottom: 0;
-}
-/* Hamburger Menu Animation End */
-
-/* Navbar Container */
-.navtext-container {
-  width: 100%;
+ /* ナビゲーションバーのコンテナ */
+ .navtext-container {
+  /* レイアウト */
   position: absolute;
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  /* ボックスモデル */
+  width: 100%;
+  box-sizing: border-box;
+ }
 
-/* Navbar Text */
-.navtext {
+ /* ナビゲーションバーのテキスト */
+ .navtext {
+  /* レイアウト */
   position: absolute;
-  text-transform: uppercase;
+  /* 背景と色 */
   color: var(--text-color);
+  /* テキストとフォント */
+  text-transform: uppercase;
   letter-spacing: 4px;
   font-size: 20px;
+ }
+
+ /* schedule_card - タッチデバイス対応のための記述（変更なし）*/
+ label[for="scheduleCheck"] {
+  cursor: pointer;
+ }
+
+ .schedule_card .schedule_content {
+  transform: translateY(75px);
+  opacity: 1;
+  transition: all 0.25s ease-in-out;
+ }
+
+ #scheduleCheck:checked ~ .schedule_card .schedule_content {
+  transform: translateY(0);
+  opacity: 1;
+ }
 }
 
-  .title {
-    font-size: 1.5rem;
-  }
 
-  .hamburger {
-    height: 50px;
-    width: 50px;
-  }
+/*==================================================
+ 9. レスポンシブデザイン (最大幅: 480px)
+==================================================*/
 
-  .sidebar {
-    display: none;
-  }
-
-  .content {
-    margin-left: 0px;
-    margin-top: 100px;
-  }
-
-  .concertPhoto {
-    margin-top: 130px;
-  }
-
-  .fancy {
-    width: 80%; 
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .fancy::before {
-    left: 5px;
-    width: 15px;
-  }
-
-  /* チェックボックス用ラベルをボタンに */
-  label[for="scheduleCheck"] {
-    cursor: pointer;
-  }
-
-  /* 初期状態の .schedule_card */
-  .schedule_card .schedule_content {
-    transform: translateY(75px);
-    opacity: 1;
-    transition: all 0.25s ease-in-out;
-  }
-
-  /* チェックされた時だけ transform & opacity を変更 */
-  #scheduleCheck:checked ~ .schedule_card .schedule_content {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  footer {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    display: block; 
-  }
-
-  .information{
-    width:80vw;
-  }
-
-  .about_content{
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-
-  }
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* レスポンシブ対応 */
 @media screen and (max-width: 480px) {
-  #icon {
-    width: 15vw;
-    height: 15vw;
-  }
+ 
+ /* タイトル */
+ .title {
+  font-size: 1.2rem;
+ }
 
-  .title {
-    font-size: 1.2rem;
-  }
+ /* アイコン (未定義のセレクタだが、元のコードに含まれていたためそのまま) */
+ #icon {
+  width: 15vw;
+  height: 15vw;
+ }
 
-  .fancy {
-    width: 60vw;
-    font-size: 1.2rem;
-    margin: 10px 0;
-  }
-
-  .fancyContainer {
-    height: auto;
-    flex-direction: column;
-  }
+ /* 装飾ボタン (Fancy Button) */
+ .fancyContainer {
+  height: auto;
+  flex-direction: column;
+ }
+ 
+ .fancy {
+  width: 60vw;
+  font-size: 1.2rem;
+  margin: 10px 0;
+ }
 }
