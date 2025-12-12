@@ -513,7 +513,7 @@ footer {
     padding-top: 100px;
  }
  .content {
-    margin-left: 0 !important;   /* ← これが必要 */
+    margin-left: 0 !important;   
 }
 
  /* ---- ハンバーガー表示 ---- */
@@ -580,9 +580,9 @@ footer {
 
     /* スライドメニュー本体（スマホ用） */
     .menu {
-        display: block;      /* ← ここでスマホ時のみ表示 */
+        display: block;      
         position: fixed;
-        right: -300px;       /* ← 初期位置：画面外で隠す */
+        right: -300px;       
         top: 0;
         width: 260px;
         height: 100%;
