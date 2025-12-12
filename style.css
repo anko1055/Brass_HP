@@ -26,7 +26,7 @@ header { position: relative; }
     width: auto;
     height: auto;
     max-height: 70vh;
-    object-fit: contain; /* cover ではなく contain */
+    object-fit: contain;
 }
 
 
@@ -121,26 +121,29 @@ p {
  color: var(--background-color);
 }
 
-.menu {
-   display: none;
-   z-index: 1000;
-}
-.menu-btn {
-   display: none;
-}
+    /* スライドメニューも消す */
+    .menu {
+        position: static;
+        display: flex !important;
+        height: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        transform: none;
+        padding: 0;
+        right: 0;
+        z-index: auto;
+    }
 
-.menu-icon {
-   display: inline-block !important;
-   position: absolute;
-   top: 18px;
-   right: 12px;
-   width: 48px;
-   height: 48px;
-   padding: 10px;
-   cursor: pointer;
-   z-index: 2000; /* ヘッダーより前面 */
-}
+    .menu li {
+        margin: 0 15px;
+    }
 
+    .menu a {
+        color: var(--text-color);
+        font-size: 16px;
+        padding: 0;
+    }
 
 /*==================================================
  4. メインコンテンツ
@@ -523,7 +526,16 @@ footer {
 ==================================================*/
 
 @media screen and (max-width: 768px) {
- 
+ header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+body {
+    padding-top: 100px;
+}
+
  .title {
     font-size: 1.5rem;
  }
@@ -563,7 +575,7 @@ footer {
     left: 5px;
     width: 15px;
  }
- 
+
 .menu {
         display: block !important; 
         position: fixed;
@@ -572,7 +584,7 @@ footer {
         width: 260px;
         height: 100%;
         clear: none;
-        z-index: 200;
+        z-index: 0;
         margin: 0;
         padding: 60px 16px;
         box-sizing: border-box;
@@ -618,7 +630,7 @@ footer {
     padding: 24px 10px;
     cursor: pointer;
     -webkit-tap-highlight-color: var(--text-color);
-    z-index: 300;
+    z-index: 160000;
 }
 
 .navicon {
@@ -755,4 +767,19 @@ footer {
 #icon {
    width: 64px;
    height: 64px;
+}
+
+/* PC表示(769px以上)ではハンバーガーメニューを非表示 */
+@media screen and (min-width: 769px) {
+
+    /* ハンバーガーアイコンとチェックボックスを消す */
+    .menu-icon,
+    .menu-btn {
+        display: none !important;
+    }
+
+    /* スライドメニュー本体も非表示に */
+    .menu {
+        display: none !important;
+    }
 }
