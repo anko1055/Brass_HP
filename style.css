@@ -1,11 +1,20 @@
 /*==================================================
  1. ルートと基本スタイル (テーマとリセット)
 ==================================================*/
-
+/* ライトモード用のスタイル */
 :root {
  --text-color: #000000;
  --background-color: #fff;
 }
+
+/* ダークモード用のスタイル */
+@media (prefers-color-scheme: dark) {
+ :root {
+  --text-color: #fff;
+  --background-color: #000000;
+ }
+}
+
 
 header { 
     position: fixed; 
@@ -42,9 +51,21 @@ header {
  2. タイポグラフィ (見出しと段落)
 ==================================================*/
 body{
-   text-align:center;
-   padding-top: 100px; 
+   /* レイアウト */
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   /* ボックスモデル */
+   margin: 0;
+       padding-top: 100px;
+   /* 背景と色 */
+   background-color: var(--background-color);
+   color: var(--text-color);
+   /* テキストとフォント */
+   text-align: center;
+   font-family: 'UD デジタル 教科書体 N-B', serif;
 }
+
 h1 {
  display: inline-block;
  margin: 0 auto 50px;
@@ -62,26 +83,33 @@ h2 {
 
 h3 {
  display: inline-block;
- margin: 0 auto 50px;
+ margin-top: 40px;   
+margin-bottom: 10px;
  padding: 5px 0 5px 5px;
  font-size: 1.5em;
  font-weight: bold;
  border-left: solid 3px #00a7eb;
 }
-
-p {
- margin: 10px 0;
+h3 + p {
+  margin-top: 0;      
 }
 
+p {
+ margin-top: 0;
+}
+
+ul{
+   list-style: none;
+}
 
 /*==================================================
  3. ヘッダーとナビゲーション (タイトル、サイドバー、メニュー)
 ==================================================*/
 
 .title {
- display: flex;
- justify-content: center;
- align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
    width: 100%;
    height: 90px;
    padding: 6px 12px;
@@ -108,7 +136,6 @@ p {
 }
 
 .sidebar ul {
- list-style: none;
  padding: 20px;
 }
 
@@ -509,11 +536,13 @@ footer {
     display: none;
  }
 
- body {
-    padding-top: 100px;
- }
+
  .content {
     margin-left: 0 !important;   
+}
+
+.title{
+   justify-content: flex-start;
 }
 
  /* ---- ハンバーガー表示 ---- */
@@ -524,7 +553,7 @@ footer {
  .menu-icon {
     display: block;
     position: absolute;
-    top: 0;
+    top: 20%;
     right: 0;
     width: 40px;
     height: 40px;
@@ -574,30 +603,30 @@ footer {
 
  /* ---- スライドメニュー ---- */
      /* スマホでのみハンバーガー表示 */
-    .menu-icon {
-        display: block;
-    }
+.menu-icon {
+   display: block;
+}
 
-    /* スライドメニュー本体（スマホ用） */
-    .menu {
-        display: block;      
-        position: fixed;
-        right: -300px;       
-        top: 0;
-        width: 260px;
-        height: 100%;
-        padding: 60px 16px;
-        background: var(--text-color);
-        color: var(--background-color);
-        transition: right 0.32s;
-        box-shadow: -2px 0 10px rgba(0,0,0,0.15);
-        z-index: 200;
+ /* スライドメニュー本体（スマホ用） */
+.menu {
+    display: block;      
+     position: fixed;
+     right: -300px;       
+     top: 0;
+     width: 260px;
+     height: 100%;
+     padding: 60px 16px;
+     background: var(--text-color);
+     color: var(--background-color);
+     transition: right 0.32s;
+     box-shadow: -2px 0 10px rgba(0,0,0,0.15);
+     z-index: 200;
     }
 
     /* チェックされたらスライドイン */
-    .menu-btn:checked ~ .menu {
-        right: 0;
-    }
+.menu-btn:checked ~ .menu {
+  right: 0;
+ }
 
 
  .menu a {
@@ -608,6 +637,9 @@ footer {
     padding: 12px 8px;
  }
 
+.menu ul{
+   list-style: none;
+}
  .menu li {
     margin: 8px 0;
  }
