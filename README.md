@@ -1,29 +1,29 @@
 # Brass_HP
 東京都市大学吹奏楽団TCU Wind Orchestraの公式HP
 
-## 主な変更点
+# 主な変更点
 - レスポンシブデザイン
 - スマホでも年間予定の説明が読めるようにした
 - ライトモード、ダークモードに対応
 - 写真を2024年の活動に変更
 
-## 問題点
+# 問題点
 - androidでダークモード対応していない
 (ios,windows,Ubuntu desktopでは対応していることを確認済み)
 
-## 更新手順
+# 更新手順
 1. 最新のＨＰを複製する
 2. 下記テンプレートを参考に複製したファイルを編集する
 - 注意事項：「編集ここから」と「編集ここまで」の間のみを編集する。
 タブは編集せず、そのまま張り付ける。
 
-## 更新用テンプレート
+# 更新用テンプレート
 
 全て1つのcssファイルで管理しているため他のhtmlファイルでもこのcss classは利用できますが、コピペしやすいようにまとめたものです。
 適宜別項目にあるものも利用してください。
 
 
-### index.html
+## index.html
 
 埋め込みのinstagram更新
 ``` html
@@ -78,12 +78,10 @@
 - スマホ画面
 [動画を見る](img/template/index-mobile.mp4)
 
-### about.html
-
+## about.html
 とくになし
 
-### report.html
-
+## report.html
 写真あり
 ``` html
     <div class="event">
@@ -117,7 +115,7 @@
 ```
 - 注意点：reportに追加するときは写真をimg/reportディレクトリに追加
 
-### schedule.html
+## schedule.html
 イベントカード
 ``` html
         <div class="schedule_card overlay" >
@@ -136,7 +134,7 @@
 ```
 注意点：イベントカード追加の時はimg/scheduleにファイル追加すること
 
-### link.html
+## link.html
 掲載団体が増えた場合
 ``` html
               <li><a class="link_color" href="リンク" target="_blank" rel="noopener">団体名</a></li>
