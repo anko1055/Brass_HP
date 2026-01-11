@@ -25,16 +25,16 @@
 
 ## index.html
 
-埋め込みのinstagram更新
+### 埋め込みのinstagram更新
 ``` html
 
 ```
-写真1枚の案内(横浜祭、世田谷祭など)
+### 写真1枚の案内(横浜祭、世田谷祭など)
 ``` html
 
 ```
 
-要素の下に青線を引き、区切りたいとき
+### 要素の下に青線を引き、区切りたいとき
 ``` html
 <div class="divider">
 要素の下に青線
@@ -51,7 +51,8 @@
 ![](img/template/divider-PC.png)
 - スマホ画面
 [写真を見る](img/template/divider-mobile.png)
-2枚の写真をパソコンでは横並びに表示、スマホでは縦に表示したいとき
+
+### 2枚の写真をパソコンでは横並びに表示、スマホでは縦に表示したいとき
 ``` html
 <div class="image-row">
     <div class="image-item">
@@ -82,7 +83,7 @@
 とくになし
 
 ## report.html
-写真あり
+### 写真あり
 ``` html
     <div class="event">
       <div class="evenvt_poter">
@@ -98,7 +99,7 @@
     </div>
 ```
 
-写真なし
+### 写真なし
 ``` html
     <div class="event">
       <div class="evenvt_poter">
@@ -116,7 +117,7 @@
 - 注意点：reportに追加するときは写真をimg/reportディレクトリに追加
 
 ## schedule.html
-イベントカード
+### イベントカード
 ``` html
         <div class="schedule_card overlay" >
           <input type="checkbox" id="scheduleCheck">
@@ -135,7 +136,7 @@
 注意点：イベントカード追加の時はimg/scheduleにファイル追加すること
 
 ## link.html
-掲載団体が増えた場合
+### 掲載団体が増えた場合
 ``` html
               <li><a class="link_color" href="リンク" target="_blank" rel="noopener">団体名</a></li>
 ```
