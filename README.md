@@ -34,7 +34,7 @@
 - パソコン画面
 ![](img/template/divider-PC.png)
 - スマホ画面
-![](img/template/divider-mobile.PNG)
+![](img/template/divider-mobile.png)
 ---
 2枚の写真をパソコンでは横並びに表示、スマホでは縦に表示したいとき
 ``` html
@@ -61,10 +61,10 @@
 - パソコン画面
 ![](img/template/image-row-PC.png)
 - スマホ画面
-![](img/template/index-mobile.mp4)
+[動画を見る](img/template/index-mobile.mp4)
 ---
 ### about.html
-とくになし
+> とくになし
 ---
 ### report.html
 写真あり
@@ -98,6 +98,7 @@
       </div>
     </div>
 ```
+注意点：reportに追加するときは写真をimg/reportディレクトリに追加
 ---
 ### schedule.html
 イベントカード
