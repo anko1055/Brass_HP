@@ -30,6 +30,10 @@
         お問い合わせ  <a class="link_color" href="mailto:tcu.brass.stack@gmail.com" target="_blank" rel="noopener">tcu.brass.stack@gmail.com</a>まで！
     </div>
 ```
+- パソコン画面
+![](img/template/divider-PC.png)
+- スマホ画面
+![](img/template/divider-mobile.PNG)
 ---
 2枚の写真をパソコンでは横並びに表示、スマホでは縦に表示したいとき
 ``` html
@@ -42,7 +46,7 @@
     </div>
 </div>
 ```
-例下記コードの時写真のようになります。
+例 下記コードの時写真のようになります。
 ``` html
       <div class="image-row">
         <div class="image-item">
@@ -53,6 +57,10 @@
         </div>
       </div>
 ```
+- パソコン画面
+![](img/template/image-row-PC.png)
+- スマホ画面
+![](img/template/index-mobile.mp4)
 ---
 ### about.html
 とくになし
@@ -114,3 +122,5 @@
 ``` html
               <li><a class="link_color" href="リンク" target="_blank" rel="noopener">団体名</a></li>
 ```
+
+### その他
