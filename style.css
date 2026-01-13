@@ -51,17 +51,13 @@ header {
  2. タイポグラフィ (見出しと段落)
 ==================================================*/
 body{
-   /* レイアウト */
    display: flex;
    flex-direction: column;
    min-height: 100vh;
-   /* ボックスモデル */
    margin: 0;
-       padding-top: 100px;
-   /* 背景と色 */
+   padding-top: 100px;
    background-color: var(--background-color);
    color: var(--text-color);
-   /* テキストとフォント */
    text-align: center;
    font-family: 'UD デジタル 教科書体 N-B', serif;
 }
@@ -210,6 +206,7 @@ ul{
  5. コンポーネント
 ==================================================*/
 
+/* index.htmlのボタン */
 .fancyContainer {
  display: flex;
  justify-content: center;
@@ -310,8 +307,17 @@ ul{
  width: 0;
 }
 
+/* index.htmlのinstagram埋め込み */
+.instagram-media {
+  max-width: 540px;
+  min-width: 326px;
+  margin: 0 auto 12px;
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid #dbdbdb;
+}
 
-/* イベントカード */
+/* report.htmlのイベントカード */
 .event {
  display: flex;
  align-items: flex-start;
@@ -336,7 +342,7 @@ ul{
 }
 
 
-/* スケジュールカード */
+/* schedule.htmlのスケジュールカード */
 #scheduleCheck {
  display: none;
 }
@@ -415,6 +421,40 @@ label[for="scheduleCheck"] {
 }
 
 
+/* link.htmlのリンクリスト */
+.two-column-list {
+ display: flex;
+ flex-wrap: wrap;
+ list-style-type: none;
+ padding: 0;
+ margin: 0;
+}
+
+.two-column-list li {
+ width: 50%;
+ box-sizing: border-box;
+ padding: 5px;
+ color: var(--text-color);
+}
+
+.link_color {
+ color: var(--text-color);
+}
+
+
+/*==================================================
+ 6. フッター
+==================================================*/
+
+footer {
+ position: relative;
+ bottom: 0;
+ width: 100%;
+ padding: 20px 0;
+ color: var(--text-color);
+ text-align: center;
+}
+
 /* SNS カード */
 .sns_card {
  display: flex;
@@ -472,41 +512,6 @@ label[for="scheduleCheck"] {
 
 .socialContainer:hover .socialSvg {
  animation: slide-in-top 1.2s both;
-}
-
-
-/* リンクリスト */
-.two-column-list {
- display: flex;
- flex-wrap: wrap;
- list-style-type: none;
- padding: 0;
- margin: 0;
-}
-
-.two-column-list li {
- width: 50%;
- box-sizing: border-box;
- padding: 5px;
- color: var(--text-color);
-}
-
-.link_color {
- color: var(--text-color);
-}
-
-
-/*==================================================
- 6. フッター
-==================================================*/
-
-footer {
- position: relative;
- bottom: 0;
- width: 100%;
- padding: 20px 0;
- color: var(--text-color);
- text-align: center;
 }
 
 
@@ -623,7 +628,7 @@ footer {
      z-index: 200;
     }
 
-    /* チェックされたらスライドイン */
+ /* チェックされたらスライドイン */
 .menu-btn:checked ~ .menu {
   right: 0;
  }

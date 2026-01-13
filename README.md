@@ -1,21 +1,7 @@
 # Brass_HP
 東京都市大学吹奏楽団TCU Wind Orchestraの公式HP
 
-# 主な変更点
-- レスポンシブデザイン
-- スマホでも年間予定の説明が読めるようにした
-- ライトモード、ダークモードに対応
-- 写真を2024年の活動に変更
 
-# 問題点
-- androidでダークモード対応していない
-(ios,windows,Ubuntu desktopでは対応していることを確認済み)
-
-# 更新手順
-1. 最新のＨＰを複製する
-2. 下記テンプレートを参考に複製したファイルを編集する
-- 注意事項：「編集ここから」と「編集ここまで」の間のみを編集する。
-タブは編集せず、そのまま張り付ける。
 
 # 更新用テンプレート
 
@@ -27,11 +13,31 @@
 
 ### 埋め込みのinstagram更新
 ``` html
-
+<blockquote class="instagram-media"
+  data-instgrm-permalink="このリンクを更新"
+  data-instgrm-version="14">
+</blockquote>
+<script async src="https://www.instagram.com/embed.js"></script>
 ```
+特に　  data-instagram-permalink=""のリンクを変更することで更新することができる。
+例
+- 2025定期演奏会 https://www.instagram.com/p/DSzO9LbkuAa
+この写真のようなリンクの部分をぬきだして貼り付ける
+- パソコン画面
+![](img/template/instagram-link.png)
+
+
 ### 写真1枚の案内(横浜祭、世田谷祭など)
 ``` html
-
+    <div class="divider">
+       <img src="img/ファイル名" alt="ファイルの説明" class="information">
+        <b>に出演します!</b><br>
+        説明、曲目など<br>
+        <!-- <a class="link_color" href="https://yokohama-fest.net/29th"  target="_blank" rel="noopener">世田谷祭HPはこちら </a><br>世田谷祭HPが公開されたら追加-->
+         ぜひお越しください<br>
+        場所：br>
+        時間：<br>
+    </div>
 ```
 
 ### 要素の下に青線を引き、区切りたいとき
@@ -40,13 +46,7 @@
 要素の下に青線
 </div>
 ```
-例 下記コードの時写真のようになります。
-``` html
-   <div class="divider">
-        <b><font color="red">新入団員  募集中！</font></b></br>
-        お問い合わせ  <a class="link_color" href="mailto:tcu.brass.stack@gmail.com" target="_blank" rel="noopener">tcu.brass.stack@gmail.com</a>まで！
-    </div>
-```
+例
 - パソコン画面
 ![](img/template/divider-PC.png)
 - スマホ画面
@@ -63,17 +63,7 @@
     </div>
 </div>
 ```
-例 下記コードの時写真のようになります。
-``` html
-      <div class="image-row">
-        <div class="image-item">
-          <img src="img/2025定演表.JPG" alt="2025定演チラシ表">
-        </div>
-        <div class="image-item">
-          <img src="img/2025定演裏.JPG" alt="2025定演チラシ裏">
-        </div>
-      </div>
-```
+例
 - パソコン画面
 ![](img/template/image-row-PC.png)
 - スマホ画面
@@ -141,5 +131,12 @@
               <li><a class="link_color" href="リンク" target="_blank" rel="noopener">団体名</a></li>
 ```
 
-### 共通（更新頻度低）
+# 主な変更点
+- レスポンシブデザイン
+- スマホでも年間予定の説明が読めるようにした
+- ライトモード、ダークモードに対応
+- 写真を2024年の活動に変更
 
+# 問題点
+- androidでダークモード対応していない
+(ios,windows,Ubuntu desktopでは対応していることを確認済み)
