@@ -1,3 +1,4 @@
+@charset "utf-8";
 /*==================================================
  1. ルートと基本スタイル (テーマとリセット)
 ==================================================*/
@@ -5,6 +6,7 @@
 :root {
  --text-color: #000000;
  --background-color: #fff;
+ --header-height: 100px;
 }
 
 /* ダークモード用のスタイル */
@@ -24,6 +26,9 @@ header {
     background: var(--background-color);
 }
 
+[id]{
+   scroll-margin-top: var(--header-height);
+}
 .image-row {
     display: inline-flex; 
     gap:10px;
@@ -151,6 +156,14 @@ ul{
 .sidebar ul li a:hover {
  background-color: var(--text-color);
  color: var(--background-color);
+}
+
+/* report.html の目次*/
+ul.index{
+   padding-top: 0;
+}
+ul.index li:last-child{
+   border: none;
 }
 
 /* ------------- PC の場合はハンバーガー消す ------------- */
@@ -647,6 +660,14 @@ footer {
 }
  .menu li {
     margin: 8px 0;
+ }
+ /*report.html の目次*/
+ .index a::before{
+   content: "　";
+   text-decoration-line: line-through;
+   text-decoration-thickness: 1px;
+
+   color: var(--background-color);
  }
 }
 
